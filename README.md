@@ -1,2 +1,2 @@
-# -yatube_project
+# yatube_project
 Social network of bloggers
