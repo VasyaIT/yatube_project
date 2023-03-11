@@ -6,4 +6,6 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('about/', views.about, name='about'),
     path('group/<str:slug>/', views.group_posts, name='group'),
+    path('contact/', views.Contact.as_view(), name='contact'),
+    path('contact_done/', views.contact_done, name='contact_done'),
 ]

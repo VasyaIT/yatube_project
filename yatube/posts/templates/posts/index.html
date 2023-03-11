@@ -7,8 +7,8 @@
 <div class="container py-5">
   <h1>Последние обновления на сайте</h1>
   <article>
-    {% for post in posts %}
-      <ul>
+    {% for post in page_obj %}
+    <ul>
         <li>
           Автор: {{ post.author.get_full_name }}
         </li>
@@ -18,8 +18,10 @@
       </ul>
         <p>{{ post.text }}</p>
         <a href="">все записи группы</a>
-  {% if not forloop.last %}<hr>{% endif %}
-{% endfor %}
+    {% if not forloop.last %}<hr>{% endif %}
+    {% endfor %}
+
+    {% include 'posts/includes/paginator.html' %}
   </article>
 </div>
 

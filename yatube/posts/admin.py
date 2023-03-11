@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Post
+from .models import Post, Contact
 
 
 class PostAdmin(admin.ModelAdmin):
@@ -10,3 +10,12 @@ class PostAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Post, PostAdmin)
+
+
+class ContactAdmin(admin.ModelAdmin):
+    list_display = ('pk', 'name', 'email', 'subject', 'body', 'is_answered')
+    empty_value_display = '-пусто-'
+
+
+admin.site.register(Contact, ContactAdmin)
+

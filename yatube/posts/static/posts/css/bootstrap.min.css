@@ -11694,3 +11694,7 @@ fieldset:disabled .btn {
 		display: none !important
 	}
 }
+
+a {
+    text-decoration: none;
+}
