@@ -7,14 +7,16 @@ User = get_user_model()
 
 
 class SignUpForm(UserCreationForm):
-    username = forms.CharField(label='username', widget=forms.TextInput(attrs={"autofocus": True, 'placeholder': 'Имя'}))
-    email = forms.EmailField(label='Email', widget=forms.EmailInput(attrs={'placeholder': 'Почта'}))
-    password1 = forms.CharField(label='Password1', widget=forms.PasswordInput(attrs={'placeholder': 'Пароль'}))
-    password2 = forms.CharField(label='Password2', widget=forms.PasswordInput(attrs={'placeholder': 'Подтвердите пароль'}))
+    first_name = forms.CharField(label='Имя', widget=forms.TextInput())
+    last_name = forms.CharField(label='Фамилия', widget=forms.TextInput())
+    username = forms.CharField(label='НикНейм', widget=forms.TextInput())
+    email = forms.EmailField(label='Почта', widget=forms.EmailInput())
+    password1 = forms.CharField(label='Пароль', widget=forms.PasswordInput())
+    password2 = forms.CharField(label='Подтвердите пароль', widget=forms.PasswordInput())
 
     class Meta:
         model = User
-        fields = ['username', 'email', 'password1', 'password2']
+        fields = ['username', 'first_name', 'last_name', 'email', 'password1', 'password2']
 
 
 # class PasswordChangeForm(forms.Form):
